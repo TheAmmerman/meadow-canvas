@@ -29,8 +29,8 @@ public class King extends Piece {
     @Override
     public boolean canMove(Board board, Spot start, Spot end)
     {
-        // we can't move the piece to a Spot that
-        // has a piece of the same color
+        // checks if the spot that we're moving to has a piece of the same color
+        // if so, then we cannot move our piece there
         if (end.getPiece().isWhite() == this.isWhite()) {
             return false;
         }
@@ -38,8 +38,10 @@ public class King extends Piece {
         int x = Math.abs(start.getX() - end.getX());
         int y = Math.abs(start.getY() - end.getY());
         if (x + y == 1) {
-            // check if this move will not result in the king being attacked
-            // If so return true
+            // **create a new if statement here**
+            //
+            // check to be sure this move will not result in the king being attacked
+            // If so, return true
             return true;
         }
 
